@@ -1,0 +1,31 @@
+
+reviews = [
+    "I love this product",
+    "This service is terrible",
+    "The product is okay",
+    "I am very happy with my purchase",
+    "The quality is bad"
+]
+
+positive_words = ["love", "great", "happy", "excellent", "good"]
+negative_words = ["terrible", "bad", "hate", "poor", "awful"]
+
+print("Sentiment Analysis Results")
+print("-" * 30)
+
+for review in reviews:
+    text = review.lower()
+
+    positive = sum(word in text for word in positive_words)
+    negative = sum(word in text for word in negative_words)
+
+    if positive > negative:
+        sentiment = "Positive"
+    elif negative > positive:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+
+    print(f"Review: {review}")
+    print(f"Sentiment: {sentiment}")
+    print("-" * 30)
